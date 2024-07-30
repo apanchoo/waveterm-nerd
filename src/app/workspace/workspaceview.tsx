@@ -257,10 +257,11 @@ class WorkspaceView extends React.Component<{}, {}> {
                     </div>
                 </If>
                 <ErrorBoundary key="eb">
-                    <ScreenView key={`screenview-${sessionId}`} session={session} screen={activeScreen} />
-                    <If condition={activeScreen != null}>
+                <If condition={activeScreen != null}>
                         <CmdInput key={"cmdinput-" + sessionId} />
                     </If>
+                    <ScreenView key={`screenview-${sessionId}`} session={session} screen={activeScreen} />
+
                 </ErrorBoundary>
             </div>
         );
