@@ -7,7 +7,7 @@
   <br/>
 </p>
 
-# Wave Terminal
+# Wave Terminal with nerd fonts
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fwavetermdev%2Fwaveterm.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fwavetermdev%2Fwaveterm?ref=badge_shield)
 
