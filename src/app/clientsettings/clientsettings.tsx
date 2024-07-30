@@ -133,9 +133,9 @@ class ClientSettingsView extends React.Component<{ model: RemotesModel }, { hove
 
     getFontFamilies(): DropdownItem[] {
         const availableFontFamilies: DropdownItem[] = [];
-        availableFontFamilies.push({ label: "JetBrains Mono", value: "JetBrains Mono" });
-        availableFontFamilies.push({ label: "Hack", value: "Hack" });
-        availableFontFamilies.push({ label: "Fira Code", value: "Fira Code" });
+        availableFontFamilies.push({ label: "JetBrains Mono Nerd Font", value: "JetBrains Mono" });
+        availableFontFamilies.push({ label: "Hack Nerd Font", value: "Hack" });
+        availableFontFamilies.push({ label: "Fira Code Nerd Font", value: "Fira Code" });
         return availableFontFamilies;
     }
 
