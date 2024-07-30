@@ -17,15 +17,15 @@ function loadJetBrainsMonoFont() {
         return;
     }
     isJetBrainsMonoLoaded = true;
-    const jbmFontNormal = new FontFace("JetBrains Mono", "url('public/fonts/jetbrains-mono-v13-latin-regular.woff2')", {
+    const jbmFontNormal = new FontFace("JetBrains Mono", "url('public/fonts/JetBrainsMonoNerdFont-Regular.ttf')", {
         style: "normal",
         weight: "400",
     });
-    const jbmFont200 = new FontFace("JetBrains Mono", "url('public/fonts/jetbrains-mono-v13-latin-200.woff2')", {
+    const jbmFont200 = new FontFace("JetBrains Mono", "url('public/fonts/JetBrainsMonoNerdFont-Regular.ttf')", {
         style: "normal",
         weight: "200",
     });
-    const jbmFont700 = new FontFace("JetBrains Mono", "url('public/fonts/jetbrains-mono-v13-latin-700.woff2')", {
+    const jbmFont700 = new FontFace("JetBrains Mono", "url('public/fonts/JetBrainsMonoNerdFont-Regular.ttf')", {
         style: "normal",
         weight: "700",
     });
@@ -61,11 +61,11 @@ function loadFiraCodeFont() {
         return;
     }
     isFiraCodeLoaded = true;
-    let firaCodeRegular = new FontFace("Fira Code", "url('public/fonts/firacode-regular.woff2')", {
+    let firaCodeRegular = new FontFace("Fira Code", "url('public/fonts/FiraCodeNerdFont-Regular.ttf')", {
         style: "normal",
         weight: "400",
     });
-    let firaCodeBold = new FontFace("Fira Code", "url('public/fonts/firacode-bold.woff2')", {
+    let firaCodeBold = new FontFace("Fira Code", "url('public/fonts/FiraCodeNerdFont-Bold.ttf')", {
         style: "normal",
         weight: "700",
     });
@@ -80,19 +80,19 @@ function loadHackFont() {
         return;
     }
     isHackFontLoaded = true;
-    let hackRegular = new FontFace("Hack", "url('public/fonts/hack-regular.woff2')", {
+    let hackRegular = new FontFace("Hack", "url('public/fonts/HackNerdFont-Regular.ttf')", {
         style: "normal",
         weight: "400",
     });
-    let hackBold = new FontFace("Hack", "url('public/fonts/hack-bold.woff2')", {
+    let hackBold = new FontFace("Hack", "url('public/fonts/HackNerdFont-Bold.ttf')", {
         style: "normal",
         weight: "700",
     });
-    let hackItalic = new FontFace("Hack", "url('public/fonts/hack-italic.woff2')", {
+    let hackItalic = new FontFace("Hack", "url('public/fonts/HackNerdFont-Italic.ttf')", {
         style: "italic",
         weight: "400",
     });
-    let hackBoldItalic = new FontFace("Hack", "url('public/fonts/hack-bolditalic.woff2')", {
+    let hackBoldItalic = new FontFace("Hack", "url('public/fonts/HackNerdFont-BoldItalic.ttf')", {
         style: "italic",
         weight: "700",
     });
