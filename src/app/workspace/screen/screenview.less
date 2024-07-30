@@ -22,7 +22,6 @@
         border-left: 1px solid var(--app-border-color);
 
         .sidebar-header {
-            /* sidebar-header height linked to MagicLayout.ScreenSidebarHeaderHeight */
             display: flex;
             flex-direction: row;
             padding: 3px 0;
@@ -91,9 +90,33 @@
     .window-view {
         display: flex;
         flex-direction: column;
+        padding-bottom: 10px;
         position: absolute;
         height: 100%;
+        overflow-y: auto;
         overflow-x: hidden;
+
+        /* Ajout des styles de la barre de défilement */
+        &::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Styles pour Firefox */
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
 
         .window-empty {
             display: flex;

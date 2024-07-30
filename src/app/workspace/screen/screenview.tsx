@@ -523,9 +523,9 @@ class ScreenWindowView extends React.Component<ScreenWindowViewProps, {}> {
     determineVisibleLines(win: ScreenLines): LineType[] {
         const { screen } = this.props;
         if (screen.filterRunning.get()) {
-            return win.getRunningCmdLines();
+            return win.getRunningCmdLines().reverse();
         }
-        return win.getNonArchivedLines();
+        return win.getNonArchivedLines().reverse();
     }
 
     @boundMethod
@@ -554,29 +554,32 @@ class ScreenWindowView extends React.Component<ScreenWindowViewProps, {}> {
         }
         const lines = this.determineVisibleLines(win);
         const renderMode = this.renderMode.get();
+
         return (
-            <div className="window-view" ref={this.windowViewRef} style={{ width }}>
-                <If condition={lines.length == 0 && screen.nextLineNum.get() != 1}>
-                    <div className="window-empty" ref={this.windowViewRef} data-screenid={screen.screenId}>
-                        <div key="lines" className="lines"></div>
-                        <div key="window-empty" className={clsx("window-empty")}>
-                            <div>
-                                <code className="text-standard">
-                                    [workspace="{session.name.get()}" tab="{screen.name.get()}"]
-                                </code>
+            <div className="window-view" ref={this.windowViewRef} style={{ width, overflowY: 'auto' }}>
+                <div style={{ display: 'flex', flexDirection: 'column-reverse', width: '100%' }}>
+                    <If condition={lines.length == 0 && screen.nextLineNum.get() != 1}>
+                        <div className="window-empty" ref={this.windowViewRef} data-screenid={screen.screenId}>
+                            <div key="lines" className="lines"></div>
+                            <div key="window-empty" className={clsx("window-empty")}>
+                                <div>
+                                    <code className="text-standard">
+                                        [workspace="{session.name.get()}" tab="{screen.name.get()}"]
+                                    </code>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </If>
-                <If condition={lines.length > 0}>
-                    <LinesView
-                        screen={screen}
-                        width={this.width.get()}
-                        lines={lines}
-                        renderMode={renderMode}
-                        lineFactory={this.buildLineComponent}
-                    />
-                </If>
+                    </If>
+                    <If condition={lines.length > 0}>
+                        <LinesView
+                            screen={screen}
+                            width={this.width.get()}
+                            lines={lines}
+                            renderMode={renderMode}
+                            lineFactory={this.buildLineComponent}
+                        />
+                    </If>
+                </div>
                 <If condition={screen.filterRunning.get()}>
                     <div className="filter-running">
                         <div className="filter-mask" />
@@ -592,3 +595,4 @@ class ScreenWindowView extends React.Component<ScreenWindowViewProps, {}> {
 }
 
 export { ScreenView };
+
